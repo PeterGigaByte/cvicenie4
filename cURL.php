@@ -1,6 +1,7 @@
 <?php
 
 //**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**
+//získanie názvov súborov
 ini_set('display_errors',1);
 ini_set('display_startup_errors',1);
 
@@ -21,7 +22,9 @@ preg_match_all("!main/[^\s]*?.csv!",$result,$matches);
 $csvNames = array_unique($matches);
 
 curl_close($ch);
+
 //**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**
+//sťahovanie súborov
 foreach ($csvNames[0] as $csvName) {
     $curl = curl_init($rawOutput . $csvName);
     $fileName = 'csvFiles' . strstr($csvName, "/");

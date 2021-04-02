@@ -2,8 +2,10 @@
 $dir = "csvFiles/";
 $files = scandir($dir);
 $files = array_diff($files, array('.', '..'));
+//pole pre zapisovanie údajov
 $array = array();
 $a=0;
+//prechádzanie súborov
 foreach ($files as $fileName){
     $file = fopen($dir.$fileName,"r");
     $data = fgetcsv($file, 1000, "\t");
@@ -19,7 +21,7 @@ foreach ($files as $fileName){
 }
 $temp = array_unique(array_column($array, 'meno'));
 $unique_arr = array_intersect_key($array, $temp);
-
+//výpis do tabuľky
 foreach ($unique_arr as $row) {
     $name = $row["meno"];
     $status = $row["status"];
