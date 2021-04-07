@@ -33,11 +33,11 @@ foreach ($csvNames[0] as $csvName) {
     curl_setopt($curl, CURLOPT_URL, $rawOutput . $csvName);
     curl_setopt($curl, CURLOPT_FILE, $fp);
     curl_setopt($curl, CURLOPT_RETURNTRANSFER, TRUE);
-
     curl_exec($curl);
-    $result2 = curl_exec($curl);
-    fwrite($fp, $result2);
 
+    $result2 = curl_exec($curl);
+    $str = mb_convert_encoding($result2, "UTF-8", "UTF-16");
+    fwrite($fp, $str);
     $httpCode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
     curl_close($curl);
 

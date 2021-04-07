@@ -2,7 +2,7 @@
 <html lang="sk">
 <head>
     <title>Cvičenie 4</title>
-    <meta charset="utf-8"/>
+    <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
     <link href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css" rel="stylesheet">
@@ -19,7 +19,6 @@
 <header>
     <span class="welcome-header">Webová stránka</span>
 </header>
-
 <div class="container border">
     <main>
         <div class="row">
@@ -31,18 +30,15 @@
                         <th>Meno</th>
                         <th>Status</th>
                         <th>Čas</th>
-
                     </tr>
                     </thead>
-                    <tbody>
-                    <?php
-                    include "table.php";
-                    ?>
-                    </tbody>
-
-
+                        <tbody>
+                            <?php
+                            header('Content-Type: text/html; charset=UTF-8');
+                            include "refreshTable.php";
+                            ?>
+                        </tbody>
                 </table>
-
         </div>
     </main>
 </div>

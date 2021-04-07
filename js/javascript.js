@@ -3,13 +3,11 @@ $(document).ready(function() {
         "paging": true,
         "searching": true,
         "bPaginate": true,
-        "bLengthChange": false,
         "bFilter": true,
         "bInfo": true,
         "bAutoWidth": true,
         pageLength: 15,
         "order": [[ 0, "desc" ]]
-
     } );
     $("#downloadCSV").click(function (){
         $.get("cURL.php", function(data, status){
