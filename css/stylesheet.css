@@ -1,7 +1,6 @@
 html{
-    width: 100%;
     min-height: 100%;
-    min-width: 420px;
+    min-width: 335px;
 }
 body{
     margin: 0;
@@ -81,6 +80,9 @@ main{
     overflow-x: hidden;
     width: 100%;
     height: 500px;
+}
+.table-m{
+    margin-top: 50px;
 }
 #0{
     color: white;
@@ -235,4 +237,57 @@ footer{
     width: 50%;
     height: auto;
     margin: 50px auto;
+}
+
+.overlay
+{
+    z-index:-1;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,.5);
+    transition : all 1s linear;
+    opacity:0;
+    position: fixed;
+    overflow-y: scroll;
+    top: 0; left: 0; right: 0; bottom: 0;
+}
+.visible{
+    opacity: 1!important;
+    z-index:5!important;
+}
+.center-screen {
+    opacity:0;
+    z-index:-1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+
+
+}
+input[type="search"] {
+    background-color : #d1d1d1!important;
+}
+select[name="table_length"] {
+    background-color : #d1d1d1!important;
+}
+#table_length,#table_filter{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-weight: bold;
+    font-size: large;
+}
+.edit-button{
+    width: 200px;margin-right: 50px
+}
+.loading-img{
+    width: 50px;
+    height: auto;
+}
+thead{
+    color: white;
+}
+.not-left{
+    background-color: #3D1223;
 }

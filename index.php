@@ -13,6 +13,7 @@
     <script src="js/javascript.js"></script>
     <link rel="stylesheet" href="css/stylesheet.css">
     <link rel="stylesheet" href="css/table.css">
+    <link rel="icon" href="images/icon.png">
 
 </head>
 <body class="container">
@@ -21,20 +22,25 @@
 </header>
 <div class="container border">
     <main>
+
         <div class="row">
-            <button id="downloadCSV" type='button' style="width: 200px;margin-right: 50px" class='btn btn-success edit-button'>Stiahnuť csv</button>
-            <button type='button' style="width: 200px" class='btn btn-warning edit-button'>Refreshnúť tabulku</button>
-                <table style="margin-top: 50px" id="table" style="overflow: scroll">
+            <button id="downloadCSV" type='button' class='btn btn-success edit-button'>Stiahnuť csv</button>
+            <button id="refreshDBS" type='button'  class='btn btn-warning edit-button'>Refreshnúť databázu</button>
+            <button id="refreshTABLE" type='button'  class='btn btn-danger edit-button'>Refreshnúť tabuľku</button>
+                <table class="table-m"  id="table" >
                     <thead>
                     <tr>
                         <th>Meno</th>
-                        <th>Status</th>
+                        <th>Priezvisko</th>
+                        <?php
+                        include "lectures.php";
+                        ?>
+                        <th>Účasť</th>
                         <th>Čas</th>
                     </tr>
                     </thead>
                         <tbody>
                             <?php
-                            header('Content-Type: text/html; charset=UTF-8');
                             include "refreshTable.php";
                             ?>
                         </tbody>
@@ -47,7 +53,7 @@
     ©PeterRigoDevelopment
 </footer>
 
-
-
+<div id="loading" class="center-screen"><img class="loading-img" alt="ha"  src="images/loading.gif"></div>
+<div id="overlay" class="overlay"></div>
 </body>
 </html>

@@ -2,15 +2,10 @@
 ini_set('display_errors',1);
 ini_set('display_startup_errors',1);
 
-
-header('Content-Type: text/html; charset=UTF-8');
 $dir = "csvFiles/";
 $files = scandir($dir);
 $files = array_diff($files, array('.', '..'));
-//pole pre zapisovanie údajov
-//$users =  array();
-//$final = array();
-//$a=0;
+
 //prechádzanie súborov
 $pred = 1;
 include_once "config/config.php";
@@ -46,38 +41,8 @@ foreach ($files as $fileName){
 
         print_r($data);
         echo '<br>';
-        //$user = array('name' => $name, 'status' => $status, 'date' => $date);
-        /*
-        $array[$a]["meno"]=$data[0];
-        $array[$a]["status"]=$data[1];
-        $array[$a]["čas"]=$data[2];
-        $a = $a + 1;
-        */
+
     }
-    //echo $pred.'. ';
     $pred = 1 + $pred;
     fclose($file);
-
-
 }
-/*
-$temp = array_unique(array_column($array, 'meno'));
-$unique_arr = array_intersect_key($array, $temp);
-//výpis do tabuľky
-foreach ($unique_arr as $row) {
-    $name = $row["meno"];
-    $status = $row["status"];
-    $time = $row["čas"];
-    echo '<tr>
-                <td>'.$name.'</td>'.
-                '<td>'.$status.'</td>'.
-                 '<td>'.$time.'</td>
-         </tr>';
-
-}
-*/
-
-/*
-$file = fopen("contacts.csv","r");
-print_r(fgetcsv($file));
-fclose($file);*/
